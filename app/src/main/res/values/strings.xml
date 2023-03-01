@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Мероприятия города</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="events">Мероприятия</string>
+    <string name="event">Мероприятие</string>
+    <string name="date">Дата</string>
+    <string name="time">Время</string>
+    <string name="cost">Стоимость билета</string>
+    <string name="weather">Погода</string>
+    <string name="length">Продолжительность</string>
+    <string name="event_site">Перейти на сайт мероприятия</string>
+
+    <string name="events_ex1">Футбольный матч</string>
+    <string name="date_ex1">14.02.23</string>
+    <string name="time_ex1">16:00</string>
+    <string name="cost_ex1">450₽</string>
+    <string name="length_ex1">105 мин.</string>
+
+    <string name="events_ex2">Спортивная эстафета</string>
+    <string name="date_ex2">16.02.23</string>
+    <string name="time_ex2">12:30</string>
+
+    <string name="events_ex3">Фестиваль</string>
+    <string name="date_ex3">16.02.23</string>
+    <string name="time_ex3">18:00</string>
+
+    <string name="events_ex4">Марафон</string>
+    <string name="date_ex4">17.02.23</string>
+    <string name="time_ex4">14:20</string>
+
+    <string name="dev_site">Перейти на сайт разработчика</string>
+    <string name="dev_info">Наша команда разработки приветствует вас!
+Добро пожаловать!
+Мы делаем одни из самых востребованных и удобных приложений на мобильном рынке.
+Наша команда работает более 5 лет и мы уже давно зарекомендовали себя как надежного и уверенного поставщика товара. Пользуясь нашими приложениями, вы будете всегда счастливы и рады вернуться к нам снова.
+Представленный ассортимент является самым широким и у нас есть все, что вам нужно.
+Наши менеджеры всегда будут рады вам помочь.</string>
+
+    <string name="events_list">Список мероприятий города</string>
+    <string name="city_map">Карта мероприятий</string>
+    <string name="about_us">О нас</string>
+    <string name="variety">Разное</string>
+</resources>
