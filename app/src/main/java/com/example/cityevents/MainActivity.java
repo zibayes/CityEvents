@@ -21,7 +21,6 @@ import com.example.cityevents.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 
 import android.view.MenuItem;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;

@@ -47,4 +47,6 @@
     <string name="city_map">Карта мероприятий</string>
     <string name="about_us">О нас</string>
     <string name="variety">Разное</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

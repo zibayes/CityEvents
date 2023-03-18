@@ -1,6 +1,9 @@
 package com.example.cityevents;
 
 import android.Manifest;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +21,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+
 public class MapsFragment extends Fragment {
 
+    private DatabaseHelper mDBHelper;
+    private SQLiteDatabase mDb;
     private final int REQUEST_CODE_ACCESS_FINE_LOCATION = 1;
     private final int REQUEST_CODE_ACCESS_COARSE_LOCATION = 2;
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
@@ -35,9 +42,29 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng krasnoyarsk = new LatLng(56, 92.55);
-            googleMap.addMarker(new MarkerOptions().position(krasnoyarsk).title("Маркер мероприятия"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(krasnoyarsk));
+            mDBHelper = new DatabaseHelper(getActivity().getApplicationContext());
+
+            try {
+                mDBHelper.updateDataBase();
+            } catch (IOException mIOException) {
+                throw new Error("UnableToUpdateDatabase");
+            }
+
+            try {
+                mDb = mDBHelper.getWritableDatabase();
+            } catch (SQLException mSQLException) {
+                throw mSQLException;
+            }
+            Cursor cursor = mDb.rawQuery("SELECT * FROM Events", null);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                LatLng event = new LatLng(Double.parseDouble(cursor.getString(7)), Double.parseDouble(cursor.getString(6)));
+                googleMap.addMarker(new MarkerOptions().position(event).title(cursor.getString(1)));
+                cursor.moveToNext();
+            }
+            cursor.close();
+            LatLng krasnoyarsk = new LatLng(56, 92.84);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(krasnoyarsk, 11));
         }
     };
 
