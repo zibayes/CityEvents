@@ -52,7 +52,7 @@ public class SecondFragment extends Fragment implements OnMapReadyCallback{
     private SQLiteDatabase mDb;
     private final int REQUEST_CODE_ACCESS_FINE_LOCATION = 1;
     private final int REQUEST_CODE_ACCESS_COARSE_LOCATION = 2;
-    String weatherAPI = "633a5e7b43ec4e90ba222914231603";
+    String weatherAPI = "ac855e4bf96c4926acf60243230204";
     String url;
 
     @Override
